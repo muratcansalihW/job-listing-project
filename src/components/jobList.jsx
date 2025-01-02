@@ -1,7 +1,17 @@
 import React from "react";
+import JobCard from "./JobCard";
 
-function jobList() {
-  return <div>jobList</div>;
-}
+const JobList = ({ jobs }) => (
+  <div className="job-list">
+    {jobs.map((job, index) => (
+      <JobCard
+        key={index}
+        logo={job.logo}
+        company={job.company}
+        description={job.description}
+      />
+    ))}
+  </div>
+);
 
-export default jobList;
+export default JobList;
